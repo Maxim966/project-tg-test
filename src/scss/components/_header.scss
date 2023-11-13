@@ -1,0 +1,60 @@
+.header {
+
+  &__container {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-top {
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -341px;
+      right: 795px;
+      width: 921px;
+      height: 921px;
+      background-size: cover;
+      background-image: url(../../img/hero/big-elipse.png);
+    }
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__number{
+      margin-left: auto;
+      margin-right: 36px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+    &__text {
+      margin: 0;
+      max-width: 14rem;
+      font-size: var(--third-size);
+      line-height: 20px
+    }
+  }
+
+  &__logo {
+    width: 9rem;
+    height: 6rem;
+  }
+}
+
+.nav {
+  &__item {
+    font-weight: bold;
+    letter-spacing: 0.48px;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 48px;
+  }
+}

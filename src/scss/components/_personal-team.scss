@@ -1,0 +1,27 @@
+.personal-team {
+
+  &__container {
+    margin-bottom: 48px;
+    justify-content: space-around;
+  }
+
+  &__content {
+    flex-basis: 40%;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: var(--offset);
+  }
+
+  &__title {
+    margin: 0;
+    font-size: var(--title-size);
+    line-height: 44px;
+  }
+
+  &__descr {
+    font-size: var(--second-size);
+    line-height: 150%;
+  }
+}

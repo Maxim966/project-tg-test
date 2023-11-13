@@ -1,0 +1,68 @@
+.reviews {
+  &__swiper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    max-width: 770px;
+  }
+
+  &__button {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    min-height: 45px;
+    min-width: 45px;
+    background-color: var(--light-color);
+    background: linear-gradient(236deg, var(--purple-heart) 2%, var(--purple-heart-light) 79.17%);
+    box-shadow: 14px 14px 40px rgba(12, 0, 46, 0.06);
+    border-radius: 10%;
+    &--left {
+      transform: rotate(180deg);
+    }
+
+    &-image {
+      width: 30px;
+      height: 30px;
+      fill: var(--light-color);
+    }
+  }
+
+  &__button::after,
+  &__button::before {
+    display: none;
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    &-wrapper {
+      min-height: 400px;
+      padding: 50px;
+      background-color: var(--white);
+      border-radius: 6px;
+      box-shadow: 14px 14px 40px rgba(12, 0, 46, .06);
+      margin: 40px 50px;
+    }
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--purple-heart-light);
+  width: 7px;
+  height: 7px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--light-color);
+  border: 1px solid var(--purple-heart);
+  width: 15px;
+  height: 15px;
+}

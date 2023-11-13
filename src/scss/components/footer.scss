@@ -1,0 +1,41 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid var(--border-color);
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    display: flex;
+    padding: 15px 0;
+    justify-content: space-between;
+    &-content {
+      margin: 0 auto;
+      padding: 0 var(--container-offset);
+      max-width: var(--container-width);
+      background-color: #E8EDF3;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 9rem;
+    height: 6rem;
+  }
+
+  &__agree {
+    &--link:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &--link {
+      color: #7A7A7A;
+    }
+  }
+
+  &__copy {
+    color: #7A7A7A;
+  }
+}

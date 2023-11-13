@@ -1,0 +1,63 @@
+.advantages {
+  &__title {
+    text-align: center;
+  }
+
+  &__mobile {
+    grid-column: 2 / 5;
+    position: relative;
+
+  }
+
+  &__content {
+    grid-column: 5 / 9;
+    align-self: center;
+  }
+
+  &__list {
+    grid-column: 9 / 12;
+    align-self: center;
+  }
+
+  &__item {
+    padding-left: 1.5rem;
+  }
+
+  &__item::marker {
+    content: url(../../img/svg/triangle.svg);
+  }
+
+  &__header {
+    margin: 0;
+    font-size: 24px;
+    line-height: 44px;
+    letter-spacing: 2.72px;
+    color: var(--purple-heart-light);
+  }
+
+  &__add-list {
+    transform: translateY(-40px);
+  }
+
+
+  &__add-item {
+    grid-column: span 3;
+    padding: 32px;
+    border-radius: 20px;
+    background: linear-gradient(236deg, #FFF 29.99%, #F4F9FF 79.17%);
+    box-shadow: 0px 4px 100px 0px rgba(208, 218, 227, 0.57);
+  }
+
+  &__phone {
+    margin-bottom: 15px;
+    width: 44px;
+    height: 62px;
+    fill: #BBA6FF;
+  }
+
+  &__header-item {
+    color: var(--black-color);
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,54 @@
+.support {
+
+  &__title {
+    margin: 0;
+    margin-bottom: 31px;
+    text-align: center;
+    font-size: var(--main-size);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+  }
+
+  &__item {
+    justify-self: center;
+    border-radius: 10px;
+    background-color: var(--light-color);
+    padding: var(--offset);
+    padding-top: 140px;
+    &--1 {
+      background-position: top center;
+      background-size: 160px 160px;
+      background-image: url(../../img/svg/team.svg);
+      background-repeat: no-repeat;
+
+    }
+
+    &--2 {
+      background-position:  top center;
+      background-size: 166px 160px;
+      background-image: url(../../img/svg/alone.svg);
+      background-repeat: no-repeat;
+    }
+
+    &--3 {
+      background-position:  top center;
+      background-size: 164px 160px;
+      background-image: url(../../img/svg/family.svg);
+      background-repeat: no-repeat;
+    }
+
+
+  }
+
+  &__header {
+    margin: 0;
+    margin-bottom: var(--main-size);
+  }
+
+}

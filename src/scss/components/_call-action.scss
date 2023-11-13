@@ -1,0 +1,24 @@
+.call-action {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-size: var(--main-sizes);
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 90px;
+    box-shadow: 14px 14px 40px rgba(12, 0, 46, 0.06);
+    fill: var(--purple-heart-light);
+  }
+}

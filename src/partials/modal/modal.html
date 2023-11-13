@@ -1,0 +1,42 @@
+<div class="modals fix-block" id="modals">
+  <div class="modals__overlay">
+    <div class="modal modal__create" id="sendForm" data-target="registration">
+        <form method="POST" class="modal__form form-site modal-form" id="modal-form">
+          <a href="#" class="modal__logo">
+            <img class="modal__logo-image" src="../../img/logo.png" alt="логотип">
+          </a>
+            <h2 class="modal__title title-default">Создайте учетную запись DuckDuckGo</h2>
+            <p class="modal__descr desc-offset">Начните беплатную 7-дневную пробную версию</p>
+          <div class="modal__input-wrap">
+              <input class="modal__input modal-name input-reset" type="text" name="name" id="modal-name" placeholder="Как вас зовут?">
+          </div>
+          <div class="modal__input-wrap">
+            <input class="modal__input modal-email input-reset" type="email" name="Email" id="modal-email" placeholder="Введите email">
+        </div>
+          <div class="modal__input-wrap">
+              <input class="modal__input modal-password input-reset" type="password" name="password" id="modal-password" placeholder="Введите пароль">
+          </div>
+        <div class="modal__input-wrap">
+          <input class="modal__input input-reset modal-phone" type="tel" name="phone" id="modal-phone" placeholder="Ваш телефон">
+      </div>
+          <div class="modal__input-wrap">
+              <label class="modal__checkbox" tabindex="-1">
+                  <input class="modal__checkbox-input modal-checkbox" type="checkbox" name="agreement" id="modal-checkbox">
+                  <span class="modal__agree agree-descr"></span>
+                  <span class="modal__agree-descr desc-offset">
+                    Создавая учетную запись в DuckDuckGo, вы принимаете <a href="#" class="modal__agree-link agree-link">Пользовательское соглашение</a> и <a href="#" class="modal__agree-link agree-link">Политику обработки персональных данных.</a>
+                  </span>
+              </label>
+          </div>
+          <div class="modal__buttons">
+            <a href="#" class="modal__btn-login">Вход</a>
+            <button class="modal__btn-create btn__primary btn-reset">Создать аккаунт</button>
+          </div>
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть окно">
+            <svg class="modal__svg">
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+      </form>
+    </div>
+</div>

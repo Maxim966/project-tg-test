@@ -1,0 +1,23 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/hero";
+@import "./components/personal-team";
+@import "./components/advantages";
+@import "./components/reviews";
+@import "./components/call-action";
+@import "./components/footer";
+
+
+// подключение маленьких компонентов страницы
+@import "./components/personal-team-list";
+@import "./components/support";
+@import "./components/rates";
+@import "./components/reviews-swiper";
+@import "./components/sotial";
+@import "./components/modal";
