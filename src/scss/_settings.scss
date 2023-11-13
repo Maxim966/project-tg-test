@@ -37,11 +37,11 @@ a {
 }
 
 .site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  overflow: hidden;
 }
 
 .is-hidden {
-  display: none !important; /* stylelint-disable-line declaration-no-important */
+  display: none !important;
 }
 
 
@@ -115,7 +115,7 @@ a {
   position: relative;
 }
 
-.btn__primary {
+.btn-primary {
   display: inline-block;
   padding: 16px 32px;
   background-color: var(--purple-heart);

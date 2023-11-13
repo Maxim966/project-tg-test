@@ -26,11 +26,11 @@
   }
 
   &__agree {
-    &--link:not(:last-child) {
+    &-link:not(:last-child) {
       margin-right: 15px;
     }
 
-    &--link {
+    &-link {
       color: #7A7A7A;
     }
   }
