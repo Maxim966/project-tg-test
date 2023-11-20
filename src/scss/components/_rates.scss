@@ -18,7 +18,6 @@
 
 .rates-card {
   width: 32%;
-  height: fit-content;
   background-color: var(--light-color);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
@@ -30,6 +29,16 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 -23px 95px rgba(208, 218, 227, 0.57);
+
+  &__wrapper {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 241px;
+    }
+  }
 
   &__title {
     margin: 0;

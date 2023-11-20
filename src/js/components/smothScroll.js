@@ -1,58 +1,68 @@
-const SmoothScroll = (target, speed, smooth) => {
-  if (target === document)
-    target = (document.documentElement ||
-              document.body.parentNode ||
-              document.body)// cross browser support for document scrolling
+import vars from '../_vars';
+function SmoothScroll(target, speed, smooth) {
+	if (target === document)
+		target = (document.documentElement ||
+             document.body.parentNode ||
+             document.body)// cross browser support for document scrolling // cross browser support for document scrolling
 
-  let moving = false;
-  let pos = target.scrollTop;
-  target.addEventListener('mousewheel', scrolled, { passive: false })
-  /* target.addEventListener('DOMMouseScroll', scrolled, false) */
+	let moving = false
+	let pos = target.scrollTop
+  let frame = target === document.body
+              && document.documentElement
+              ? document.documentElement
+              : target // safari is the new IE
 
-  function scrolled(e) {
-    e.preventDefault(); // disable default scrolling
-    let delta = e.delta || e.wheelDelta;
-    if (delta === undefined) {
-      //we are on firefox
-      delta = -e.detail;
-    }
-    delta = Math.max(-1, Math.min(1, delta)) // cap the delta to [-1,1] for cross browser consistency
+	target.addEventListener('mousewheel', scrolled, { passive: false })
+	target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
 
-    pos += -delta * speed
-    pos = Math.max(0, Math.min(pos, (target.scrollHeight - target.clientHeight) + (smooth * 2))) // limit scrolling
+	function scrolled(e) {
+		e.preventDefault(); // disable default scrolling
 
-    if (!moving) update()
-  }
+		let delta = normalizeWheelDelta(e)
 
-  function update() {
-    moving = true
-    let delta = (pos - target.scrollTop) / smooth;
+		pos += -delta * speed
+		pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) // limit scrolling
 
-    delta -= 1;
+		if (!moving) update()
+	}
 
-    if(pos - target.scrollTop === smooth * 2)
-      delta = 0;
+	function normalizeWheelDelta(e){
+		if(e.detail){
+			if(e.wheelDelta)
+				return e.wheelDelta/e.detail/40 * (e.detail>0 ? 1 : -1) // Opera
+			else
+				return -e.detail/3 // Firefox
+		}else
+			return e.wheelDelta/120 // IE,Safari,Chrome
+	}
 
-    target.scrollTop += delta
-    if (Math.abs(delta) > 0.5)
-      requestFrame(update)
-    else
-      moving = false
-  }
+	function update() {
+		moving = true
 
-  var requestFrame = function() { // requestAnimationFrame cross browser
-    return (
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function(func) {
-        window.setTimeout(func, 1000 / 50);
-      }
-    );
-  }()
+		let delta = (pos - target.scrollTop) / smooth
+
+		target.scrollTop += delta
+
+		if (Math.abs(delta) > 0.5)
+			requestFrame(update)
+		else
+			moving = false
+	}
+
+	let requestFrame = function() { // requestAnimationFrame cross browser
+		return (
+			window.requestAnimationFrame ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame ||
+			window.oRequestAnimationFrame ||
+			window.msRequestAnimationFrame ||
+			function(func) {
+				window.setTimeout(func, 1000 / 50);
+			}
+		);
+	}()
 }
 
 
 SmoothScroll(document,114,7)
+
