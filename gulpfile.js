@@ -320,6 +320,10 @@ const toProd = (done) => {
   done();
 };
 
+dest.task('deploy', function() {
+  return dest.src('./app/**/*')
+    .pipe(ghPages());
+});
 
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
@@ -331,7 +335,3 @@ exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
 
-dest.task('deploy', function() {
-  return dest.src('.app/**/*')
-  .pipe(ghPages())
-})
