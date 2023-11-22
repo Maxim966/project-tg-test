@@ -1,0 +1,110 @@
+.modals__overlay {
+  z-index: 25;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(51, 51, 51, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.modals__overlay--visible {
+  visibility: visible;
+  z-index: 100;
+  opacity: 1;
+  overflow: auto;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.modal {
+  width: 500px;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal--visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+.modal__form {
+  text-align: center;
+}
+.modal__logo {
+  display: inline-block;
+}
+.modal__logo-image {
+  width: 9rem;
+  height: 6rem;
+}
+.modal-create {
+  position: relative;
+  padding: 35px;
+  background-color: var(--light-color);
+}
+.modal__title, .modal__descr {
+  margin-bottom: 15px;
+}
+.modal__input {
+  width: 100%;
+  border: 1px solid var(--black-color);
+  outline: none;
+  border-radius: 4px;
+  padding: 15px;
+}
+.modal__input-wrap {
+  margin-bottom: 30px;
+}
+.modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.modal__agree-link {
+  color: var(--purple-heart);
+}
+.modal__btn-login {
+  color: var(--purple-heart);
+}
+.modal__btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+}
+.modal__svg {
+  width: 40px;
+  height: 40px;
+}
+
+.just-validate-error-field {
+  border: 1px solid var(--red-color);
+}
+
+.just-validate-error-label {
+  padding-top: 5px;
+  font-size: 12px;
+}
+/*# sourceMappingURL=modal.css.map */
