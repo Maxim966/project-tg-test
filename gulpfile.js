@@ -5,6 +5,7 @@ const {
   watch
 } = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
+const ghPages = require('gulp-gh-pages');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -56,6 +57,7 @@ const clean = () => {
   return del([buildFolder])
 }
 
+
 //svg sprite
 const svgSprites = () => {
   return src(paths.srcSvg)
@@ -88,6 +90,8 @@ const svgSprites = () => {
     }))
     .pipe(dest(paths.buildImgFolder));
 }
+
+
 
 // scss styles
 const styles = () => {
@@ -316,6 +320,7 @@ const toProd = (done) => {
   done();
 };
 
+
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 
 exports.backend = series(clean, htmlInclude, scriptsBackend, stylesBackend, resources, images, webpImages, svgSprites)
@@ -325,3 +330,8 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
+
+dest.task('deploy', function() {
+  return dest.src('.app/**/*')
+  .pipe(ghPages())
+})
