@@ -6,6 +6,7 @@
   "scripts": {
     "html": "node-w3c-validator -f lint -evH -i app/**/*.html",
     "dev": "gulp",
+    "deploy": "dev -d app",
     "build": "gulp build",
     "cache": "gulp cache",
     "backend": "gulp backend",
@@ -14,6 +15,7 @@
   },
   "author": "Max",
   "license": "ISC",
+  "homepage": "https://maxim966.github.io/project-tg-test",
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
