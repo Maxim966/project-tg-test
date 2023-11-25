@@ -2,7 +2,8 @@ const {
   src,
   dest,
   series,
-  watch
+  watch,
+  task
 } = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const ghPages = require('gulp-gh-pages');
@@ -320,10 +321,7 @@ const toProd = (done) => {
   done();
 };
 
-dest.task('deploy', function() {
-  return dest.src('./app/**/*')
-    .pipe(ghPages());
-});
+task('deploy', () => src('./app/**/*').pipe(ghPages ()));
 
 exports.default = series(clean, htmlInclude, scripts, styles, resources, images, webpImages, svgSprites, watchFiles);
 

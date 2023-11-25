@@ -6,7 +6,7 @@
   "scripts": {
     "html": "node-w3c-validator -f lint -evH -i app/**/*.html",
     "dev": "gulp",
-    "deploy": "dev -d app",
+    "deploy": "main -d app",
     "build": "gulp build",
     "cache": "gulp cache",
     "backend": "gulp backend",
